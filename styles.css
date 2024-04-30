@@ -1,0 +1,26 @@
+@import url("styles/header.css");
+@import url("styles/banner.css");
+@import url("styles/carrossel.css");
+@import url("styles/topicos.css");
+@import url("styles/contato.css");
+@import url("styles/rodapé.css");
+
+:root {
+    --cor-de-fundo: #f7ebe8;
+    --branco: #FFA987;
+    --laranja: #E54B4B;
+    --azul-degrade: linear-gradient(97.54deg, #1E1E24 35.49%, #444140 165.37%);
+    --fonte-principal: "Handjet";
+    --azul: #1E1E24;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doces ao Cubo³</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <button class="buttomHamburger" onclick="toggleMenu()">
+            <img src="img/Menu.svg"/>
+        </button>
+        <div>
+            <a href="#"><img src="img/Favoritos.svg" alt="Meus favoritos" ></a>
+            <a href="#"><img src="img/Compras.svg" alt="Carrinhos de compras" ></a>
+            <a href="#"><img src="img/Usuario.svg" alt="Meu perfil"></a>
+        </div>
+        <ul class="lista-menu" id="menuHamburger">
+            <li class="lista-menu__titulo">Menu</li>
+            <li class="lista-menu__item">
+                <a href="#" class="lista-menu__link">Bolos</a>
+            </li>
+        
+            <li class="lista-menu__item">
+                <a href="#" class="lista-menu__link">Tortas</a>
+            </li>
+            
+            <li class="lista-menu__item">
+                <a href="#" class="lista-menu__link">Mousses</a>
+            </li>
+            <li class="lista-menu__item">
+                <a href="#" class="lista-menu__link">Brigadeiros</a>
+            </li>
+        </ul>
+    </nav>
+    <header class="cabeçalho">
+        <div class="container">
+            <img src="img/logo.png.png" alt="Logo" class="container__imagem">
+        </div>
+    </header>
+    <section class="banner">
+        <h2 class="banner__titulo">Sabe como começar?</h2>
+        <p class="banner__texto">Encontre aqui o que precisa para cada um de seus momentos!</p>
+        <input type="search" class="banner__pesquisa" placeholder="Qual será sua próxima receita?">
+    </section>
+    <section class="carrossel">
+        <h2 class="carrossel__titulo">As clássicas que todo mundo ama.</h2>
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="img/BEIJINHO.jpg"
+                        alt="Livro 1"></div>
+                <div class="swiper-slide"><img src="img/mousse.jpg"
+                        alt="Livro 2"></div>
+                <div class="swiper-slide"><img src="img/negamaluca.png"
+                        alt="Livro 3"></div>
+                <div class="swiper-slide"><img src="img/TORTA.webp" alt="Receita 1"></div>
+                <div class="swiper-slide"><img src="img/brigadeiro.webp" alt="Receita 2"></div>
+                <div class="swiper-slide"><img src="img/BRIGADEIROMARACUJA.jpg" alt="Receita 3"></div>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+        <div class="card">
+            <!-- 1º linha -->
+            <div class="card__descrição">
+                <!-- 1º coluna -->
+                <div class="descrição">
+                    <h3 class="descrição__titulo">Talvez você também se interesse por...</h3>
+                    <h2 class="descrição__titulo-livro">Franuí</h2>
+                    <p class="descrição__texto">Framboesas frescas com uma camada de chocolate branco e uma camada de chocolate ao leite. A receita perfeita para agradar a todos.</p>
+                </div>
+                <!-- 2º coluna -->
+                <img src="img/franu.jpeg" class="descrição__imagem">
+            </div>
+
+            <!-- 2º linha -->
+            <div class="card__botões">
+                <!-- 1º coluna -->
+                <ul class="botões">
+                    <li class="botões__item"><img src="img/Favoritos.svg" alt="Favoritar doce"></li>
+                    <li class="botões__item"><img src="img/Compras.svg" alt="Adicionar a lista de afazeres"></li>
+                </ul>
+                <!-- 2º coluna -->
+                <a href="#" class="botões__ancora">Saiba mais</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="tópicos">
+        <h2 class="tópicos__titulo">TÓPICOS VISITADOS RECENTEMENTE</h2>
+        <ul class="tópicos__lista">
+            <li class="tópicos__item">
+                <a href="#" class="tópicos__link">Mousse de limão</a>
+            </li>
+            <li class="tópicos__item">
+                <a href="#" class="tópicos__link">Bolo de laranja</a>
+            </li>
+            <li class="tópicos__item">
+                <a href="#" class="tópicos__link">Beijinho</a>
+            </li>
+           
+        </ul>
+    </section>
+
+    <section class="contato">
+        <h2 class="contato__titulo">Fique por dentro das novidades!</h2>
+        <input type="email" placeholder="Cadastre seu e-mail" class="contato__email">
+    </section>
+
+    <hr />
+
+    <footer class="rodapé">
+        <h2 class="rodapé__titulo">Grupo Doces ao cubo³</h2>
+    </footer>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            spaceBetween: 10,
+            slidesPerView: 3,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+        });
+
+        const buttonMenu = document.getElementById("menuHamburger");
+
+        function toggleMenu(el){
+            if(buttonMenu.ariaExpanded == "true")
+                buttonMenu.ariaExpanded = false;
+            else
+                buttonMenu.ariaExpanded = true;
+        }
+
+
+    </script>
+</body>
+
+</html>
